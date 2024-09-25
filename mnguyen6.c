@@ -27,7 +27,8 @@ void *runner(void *param)
 	sum += i;
 	
 	printf("enter a number\n");
-	getchar();
+	int x = 0;
+	scanf("%d", x);
 
 	pthread_exit(0);
 }
