@@ -16,11 +16,14 @@ int main(void)
 	 * after the function completes, with pointers you are changing a value by using it's address.
 	 */
 
+	int value1 = 1;
+	int value2 = 2;
+	int *ptr1 = &value1;
+	int *ptr2 = &value2;
 	int *pointa;
-	int *temp;
 	int expected = 1;
 	int newValue = 22;
-
+	
 	//A pointer only points to the address space of another value.
 	pointa = &expected;
 	//pointa now points to the address space of the value expected.
@@ -54,7 +57,7 @@ int main(void)
 	printf("expected = %d\n", expected);
 	printf("valueReturned = %d\n", valueReturned);
 	printf("After Swap\n");
-	newfunction(&expected, &valueReturned, pointa, temp);
+	newfunction(&expected, &valueReturned, ptr1, ptr2);
 	printf("expected = %d\n", expected);
 	printf("valueReturned = %d\n", valueReturned);
 	
@@ -81,5 +84,9 @@ void newfunction(int *point1, int *point2, int *point3, int *point4)
 	int temp = *point1;
 	*point1 = *point2;
 	*point2 = temp;
+
+	int temp2 = *point3;
+	*point3 = *point4;
+	*point4 = temp2;
 }
 	
